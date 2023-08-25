@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DisplayScreen extends StatefulWidget {
-  final Widget widget;
+  final Widget child;
 
-  const DisplayScreen({super.key, required this.widget});
+  const DisplayScreen({super.key, required this.child});
+
+  static Future open(BuildContext context, {required Widget widget}) {
+    return Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => DisplayScreen(child: widget)),
+    );
+  }
 
   @override
   DisplayScreenState createState() => DisplayScreenState();
@@ -14,10 +20,9 @@ class DisplayScreenState extends State<DisplayScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Display Screen')),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
+      body: Column(
         children: [
-          widget,
+          widget.child,
         ],
       ),
     );
