@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/ui/screens/display/display_screen.dart';
 import 'package:widgets/ui/widgets/custom_card.dart';
+import 'package:widgets/ui/widgets/dashed_line.dart';
 
 import '../../widgets/avatar.dart';
 
@@ -36,7 +37,17 @@ class MainScreenState extends State<MainScreen> {
         width: 200,
         child: Text('Hello World'),
       ),
-    }
+    },
+    {
+      'title': 'Horizontal Dashed Line',
+      'widget': const HorizontalDashedLine(),
+    },
+    {
+      'title': 'Vertical Dashed Line',
+      'widget': const VerticalDashedLine(
+        heightContainer: 250,
+      ),
+    },
   ];
 
   @override
