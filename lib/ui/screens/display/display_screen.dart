@@ -20,9 +20,17 @@ class DisplayScreenState extends State<DisplayScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Display Screen')),
-      body: Column(
+      body: ListView(
+        shrinkWrap: true,
+        padding: const EdgeInsets.all(20),
         children: [
-          widget.child,
+          Center(
+            child: Column(
+              children: [
+                widget.child,
+              ],
+            ),
+          ),
         ],
       ),
     );

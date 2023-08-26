@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/ui/screens/display/display_screen.dart';
+import 'package:widgets/ui/widgets/custom_card.dart';
 
 import '../../widgets/avatar.dart';
 
@@ -7,10 +8,11 @@ class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
   static Future open(BuildContext context) {
-    return Navigator.of(context).push(
+    return Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
         builder: (context) => const MainScreen(),
       ),
+      (_) => false,
     );
   }
 
@@ -26,6 +28,14 @@ class MainScreenState extends State<MainScreen> {
         radius: 50,
         size: 100,
       ),
+    },
+    {
+      'title': 'Custom Card',
+      'widget': const CustomCard(
+        height: 100,
+        width: 200,
+        child: Text('Hello World'),
+      ),
     }
   ];
 
@@ -39,6 +49,7 @@ class MainScreenState extends State<MainScreen> {
         itemCount: widgets.length,
         itemBuilder: (context, index) {
           return Container(
+            margin: const EdgeInsets.all(4),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: Colors.white,
