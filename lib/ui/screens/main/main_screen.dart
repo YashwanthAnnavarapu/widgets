@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/ui/screens/display/display_screen.dart';
+import 'package:widgets/ui/screens/form_fields/form_fields_screen.dart';
 import 'package:widgets/ui/widgets/custom_card.dart';
 import 'package:widgets/ui/widgets/dashed_line.dart';
 
@@ -25,6 +26,7 @@ class MainScreenState extends State<MainScreen> {
   List<Map<String, dynamic>> widgets = [
     {
       'title': 'Avatar',
+      'screen': 'display',
       'widget': const Avatar(
         radius: 50,
         size: 100,
@@ -32,6 +34,7 @@ class MainScreenState extends State<MainScreen> {
     },
     {
       'title': 'Custom Card',
+      'screen': 'display',
       'widget': const CustomCard(
         height: 100,
         width: 200,
@@ -40,13 +43,19 @@ class MainScreenState extends State<MainScreen> {
     },
     {
       'title': 'Horizontal Dashed Line',
+      'screen': 'display',
       'widget': const HorizontalDashedLine(),
     },
     {
       'title': 'Vertical Dashed Line',
+      'screen': 'display',
       'widget': const VerticalDashedLine(
         heightContainer: 250,
       ),
+    },
+    {
+      'title': 'DatePicker',
+      'screen': 'form',
     },
   ];
 
@@ -54,7 +63,10 @@ class MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      appBar: AppBar(title: const Text('Widgets')),
+      appBar: AppBar(
+        title: const Text('Widgets'),
+        titleSpacing: 16,
+      ),
       body: ListView.builder(
         padding: const EdgeInsets.all(20),
         itemCount: widgets.length,
@@ -69,7 +81,11 @@ class MainScreenState extends State<MainScreen> {
             ),
             child: InkWell(
               onTap: () {
-                DisplayScreen.open(context, widget: widgets[index]['widget']);
+                if (widgets[index]['screen'] == 'display') {
+                  DisplayScreen.open(context, widget: widgets[index]['widget']);
+                } else if (widgets[index]['screen'] == 'form') {
+                  FormFieldsScreen.open(context);
+                }
               },
               child: Row(
                 children: [
@@ -77,8 +93,8 @@ class MainScreenState extends State<MainScreen> {
                   Text(widgets[index]['title'], style: textTheme.titleLarge),
                   const Spacer(),
                   const Icon(
-                    Icons.arrow_forward_ios_rounded,
                     size: 16,
+                    Icons.arrow_forward_ios_rounded,
                   ),
                 ],
               ),
