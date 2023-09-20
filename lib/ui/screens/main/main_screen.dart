@@ -128,6 +128,11 @@ class MainScreenState extends State<MainScreen> {
           ),
         ),
       },
+      {
+        'title': 'Empty Widget',
+        'screen': 'display',
+        'widget': const EmptyWidget(),
+      },
     ];
   }
 
