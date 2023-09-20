@@ -6,6 +6,7 @@ import 'package:widgets/ui/widgets/dashed_line.dart';
 import 'package:widgets/ui/widgets/details_tile.dart';
 import 'package:widgets/ui/widgets/empty_widget.dart';
 import 'package:widgets/ui/widgets/gallery_screen.dart';
+import 'package:widgets/ui/widgets/grid_wrap.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
 
 import '../../widgets/avatar.dart';
@@ -101,6 +102,18 @@ class MainScreenState extends State<MainScreen> {
       {
         'title': 'Gallery Screen',
         'screen': 'galleryScreen',
+      },
+      {
+        'title': 'Grid Wrap Widget',
+        'screen': 'display',
+        'widget': GridWrap(
+          count: 2,
+          spacing: 16,
+          children: List.generate(
+            2,
+            (index) => Container(color: Colors.blueAccent),
+          ),
+        ),
       },
     ];
   }
