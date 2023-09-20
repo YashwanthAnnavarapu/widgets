@@ -11,6 +11,7 @@ import 'package:widgets/ui/widgets/grid_wrap.dart';
 import 'package:widgets/ui/widgets/image_from_net.dart';
 import 'package:widgets/ui/widgets/mont_picker.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
+import 'package:widgets/ui/widgets/webview_screen.dart';
 
 import '../../widgets/avatar.dart';
 import '../../widgets/confirm_dialog.dart';
@@ -153,6 +154,10 @@ class MainScreenState extends State<MainScreen> {
         'title': 'TimePicker',
         'screen': 'form',
       },
+      {
+        'title': 'WebView Screen',
+        'screen': 'webview',
+      },
     ];
   }
 
@@ -212,6 +217,13 @@ class MainScreenState extends State<MainScreen> {
                       break;
                     case 'search':
                       SearchScreen.open(context);
+                      break;
+                    case 'webview':
+                      WebViewScreen.open(
+                        context,
+                        url: 'https://flutter.dev',
+                        title: 'Webview Screen',
+                      );
                       break;
                     default:
                       return;
