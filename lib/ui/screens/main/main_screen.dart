@@ -4,6 +4,7 @@ import 'package:widgets/ui/screens/form_fields/form_fields_screen.dart';
 import 'package:widgets/ui/widgets/custom_card.dart';
 import 'package:widgets/ui/widgets/dashed_line.dart';
 import 'package:widgets/ui/widgets/details_tile.dart';
+import 'package:widgets/ui/widgets/empty_widget.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
 
 import '../../widgets/avatar.dart';
@@ -90,6 +91,11 @@ class MainScreenState extends State<MainScreen> {
           },
           child: const Text('Click Here'),
         ),
+      },
+      {
+        'title': 'Empty Widget',
+        'screen': 'display',
+        'widget': const EmptyWidget(),
       },
     ];
   }
