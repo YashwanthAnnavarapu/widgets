@@ -8,6 +8,7 @@ import 'package:widgets/ui/widgets/empty_widget.dart';
 import 'package:widgets/ui/widgets/gallery_screen.dart';
 import 'package:widgets/ui/widgets/grid_wrap.dart';
 import 'package:widgets/ui/widgets/image_from_net.dart';
+import 'package:widgets/ui/widgets/mont_picker.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
 
 import '../../widgets/avatar.dart';
@@ -132,6 +133,16 @@ class MainScreenState extends State<MainScreen> {
         'title': 'Empty Widget',
         'screen': 'display',
         'widget': const EmptyWidget(),
+      },
+      {
+        'title': 'Month Picker Widget',
+        'screen': 'display',
+        'widget': MonthPicker(
+          firstDate: DateTime(2000),
+          lastDate: DateTime.now(),
+          initialDate: DateTime.now(),
+          onTap: () {},
+        ),
       },
     ];
   }
