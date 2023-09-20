@@ -1,6 +1,6 @@
 # widgets
 
-A new Flutter project.
+A Flutter project for building Custom Widgets
 
 ## Getting Started
 
