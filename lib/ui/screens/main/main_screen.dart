@@ -7,6 +7,7 @@ import 'package:widgets/ui/widgets/details_tile.dart';
 import 'package:widgets/ui/widgets/empty_widget.dart';
 import 'package:widgets/ui/widgets/gallery_screen.dart';
 import 'package:widgets/ui/widgets/grid_wrap.dart';
+import 'package:widgets/ui/widgets/image_from_net.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
 
 import '../../widgets/avatar.dart';
@@ -115,6 +116,18 @@ class MainScreenState extends State<MainScreen> {
           ),
         ),
       },
+      {
+        'title': 'Image From Net Widget',
+        'screen': 'display',
+        'widget': ClipRRect(
+          borderRadius: BorderRadius.circular(25),
+          child: ImageFromNet(
+            fit: BoxFit.contain,
+            borderRadius: BorderRadius.circular(25),
+            imageUrl: 'https://wallpapercave.com/wp/6jJbGcg.jpg',
+          ),
+        ),
+      },
     ];
   }
 
@@ -124,8 +137,8 @@ class MainScreenState extends State<MainScreen> {
     initialize();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Widgets'),
         titleSpacing: 16,
+        title: const Text('Widgets'),
       ),
       body: RefreshIndicator(
         onRefresh: () async {
