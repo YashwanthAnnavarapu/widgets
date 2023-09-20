@@ -5,6 +5,7 @@ import 'package:widgets/ui/widgets/custom_card.dart';
 import 'package:widgets/ui/widgets/dashed_line.dart';
 import 'package:widgets/ui/widgets/details_tile.dart';
 import 'package:widgets/ui/widgets/empty_widget.dart';
+import 'package:widgets/ui/widgets/gallery_screen.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
 
 import '../../widgets/avatar.dart';
@@ -97,6 +98,10 @@ class MainScreenState extends State<MainScreen> {
         'screen': 'display',
         'widget': const EmptyWidget(),
       },
+      {
+        'title': 'Gallery Screen',
+        'screen': 'galleryScreen',
+      },
     ];
   }
 
@@ -144,6 +149,15 @@ class MainScreenState extends State<MainScreen> {
                       break;
                     case 'form':
                       FormFieldsScreen.open(context);
+                      break;
+                    case 'galleryScreen':
+                      GalleryScreen.open(
+                        context,
+                        images: [
+                          'https://wallpapercave.com/wp/6jJbGcg.jpg',
+                          'https://wallpapercave.com/wp/dobrNev.jpg',
+                        ],
+                      );
                       break;
                     default:
                       return;
