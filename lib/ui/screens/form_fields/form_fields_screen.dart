@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/ui/widgets/date_picker.dart';
+import 'package:widgets/ui/widgets/time_picker.dart';
 
 class FormFieldsScreen extends StatefulWidget {
   const FormFieldsScreen({super.key});
@@ -16,6 +17,9 @@ class FormFieldsScreen extends StatefulWidget {
 
 class FormFieldsScreenState extends State<FormFieldsScreen> {
   final dateCtrl = TextEditingController();
+  final timeCtrl = TextEditingController();
+
+  TimeOfDay? time;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,14 @@ class FormFieldsScreenState extends State<FormFieldsScreen> {
                 endDate: DateTime(2025),
                 onDateChange: (value) {
                   print(value);
+                },
+              ),
+              const SizedBox(height: 16),
+              TimePicker(
+                time,
+                timeCtrl: timeCtrl,
+                onTimeChange: (time) {
+                  this.time = time;
                 },
               ),
             ],

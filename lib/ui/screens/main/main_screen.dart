@@ -149,6 +149,10 @@ class MainScreenState extends State<MainScreen> {
         'title': 'Search Widget',
         'screen': 'search',
       },
+      {
+        'title': 'TimePicker',
+        'screen': 'form',
+      },
     ];
   }
 
