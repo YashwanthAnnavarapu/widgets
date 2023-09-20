@@ -7,6 +7,7 @@ import 'package:widgets/ui/widgets/details_tile.dart';
 import 'package:widgets/ui/widgets/reverse_details_tile.dart';
 
 import '../../widgets/avatar.dart';
+import '../../widgets/confirm_dialog.dart';
 import '../display/display_screen_2.dart';
 
 class MainScreen extends StatefulWidget {
@@ -77,6 +78,17 @@ class MainScreenState extends State<MainScreen> {
         'widget': const ReverseDetailsTile(
           title: Text('Title'),
           value: Text('Value'),
+        ),
+      },
+      {
+        'title': 'Confirm Dialog',
+        'screen': 'display',
+        'widget': ElevatedButton(
+          onPressed: () async {
+            var res = await ConfirmDialog.show(context, 'Do you like cricket');
+            print(res);
+          },
+          child: const Text('Click Here'),
         ),
       },
     ];
