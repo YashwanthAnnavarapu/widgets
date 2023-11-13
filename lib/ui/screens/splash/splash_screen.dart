@@ -4,6 +4,14 @@ import '../main/main_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  static Future open(BuildContext context) {
+    return Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (context) => const SplashScreen(),
+      ),
+      (_) => false,
+    );
+  }
 
   @override
   SplashScreenState createState() => SplashScreenState();
