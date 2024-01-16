@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widgets/ui/screens/display/display_screen.dart';
 import 'package:widgets/ui/screens/form_fields/form_fields_screen.dart';
 import 'package:widgets/ui/screens/seearch/search_screen.dart';
+import 'package:widgets/ui/screens/show_bottom_sheet/show_bottom_sheet_screen.dart';
 import 'package:widgets/ui/widgets/custom_card.dart';
 import 'package:widgets/ui/widgets/dashed_line.dart';
 import 'package:widgets/ui/widgets/details_tile.dart';
@@ -158,6 +159,10 @@ class MainScreenState extends State<MainScreen> {
         'title': 'WebView Screen',
         'screen': 'webview',
       },
+      {
+        'title': 'Show All Bottom Sheets Screen',
+        'screen': 'bottomSheet',
+      },
     ];
   }
 
@@ -224,6 +229,9 @@ class MainScreenState extends State<MainScreen> {
                         url: 'https://flutter.dev',
                         title: 'Webview Screen',
                       );
+                      break;
+                    case 'bottomSheet':
+                      ShowBottomSheetScreen.open(context: context);
                       break;
                     default:
                       return;
